@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const dbConnection=async()=>{
+const dbconnection = async function(){
 
     try{
         await mongoose.connect(process.env.MONGODB_CNX, {
@@ -10,10 +10,10 @@ const dbConnection=async()=>{
             useFindAndModify: false
         });
 
-    console.log('base de datos online');
+    console.log('base de datos online')
 
-    }  catch {error} { 
-    // throw new Error('Error al iniciar la base de datos')        ;
+    }  catch (err) { 
+           console.log("Error ==> ", error)
     }
 }
-export default dbConnection
+export default dbconnection
